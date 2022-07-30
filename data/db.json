@@ -1,0 +1,66 @@
+{
+  "recipes": [
+    {
+      "id": "1",
+      "title": "Clean Code: A Handbook of Agile Software Craftsmanship",
+      "ingredients": [
+        "1 Carrot",
+        "1 Leek",
+        "200g Tofu",
+        "300ml Veg stock"
+      ],
+      "method": "Even bad code can function. But if code isn't clean, it can bring a development organization to its knees. Every year, countless hours and significant resources are lost because of poorly written code. But it doesnt have to be that way. Noted software expert robert c. Martin presents a revolutionary paradigm with clean code: a handbook of agile software craftsmanship. Martin has teamed up with his colleagues from object mentor to distill their best agile practice of cleaning code on the fly into a book that will instill within you the values of a software craftsman and make you a better programmerbut only if you work at it.",
+      "cookingTime": "Robert C. Martin"
+    },
+    {
+      "id": "2",
+      "title": "Head First Design Patterns",
+      "ingredients": [
+        "1 Base",
+        "Tomata pasata",
+        "1 Green pepper",
+        "100g Mushrooms"
+      ],
+      "method": "You know you don't want to reinvent the wheel, so you look to design patterns-the lessons learned by those who've faced the same software design problems. With design patterns, you get to take advantage of the best practices and experience of others, so that you can spend your time on something more challenging. Something more fun. This book shows you the patterns that matter, when to use them and why, how to apply them to your own designs, and the object-oriented design principles on which patterns are based. Most importantly, you want to learn design patterns in a way that won't put you to sleep. If you've read a Head First book, you know what to expect-a visually rich format designed for the way your brain works. Newly updated and expanded, Head First Design Patterns, 2E, will load patterns into your brain in a way that sticks. In a way that makes you better at solving software design problems and better at speaking the language of patterns with others on your team. Join the hundreds of thousands of developers who have already improved their object-oriented design skills through Head First Design Patterns",
+      "cookingTime": "Eric Freeman"
+    },
+    {
+      "id": "3",
+      "title": "The Pragmatic Programmer",
+      "ingredients": [
+        "1 Onion",
+        "1 Block of Feta",
+        "Olives",
+        "Tomatoes",
+        "Olive Oil"
+      ],
+      "method": "Straight from the programming trenches, The Pragmatic Programmer cuts through the increasing specialization and technicalities of modern software development to examine the core process--taking a requirement and producing working, maintainable code that delights its users. It covers topics ranging from personal responsibility and career development to architectural techniques for keeping your code flexible and easy to adapt and reuse. ",
+      "cookingTime": "Andrew Hunt, David Thomas"
+    },
+    {
+      "title": "asd",
+      "ingredients": [
+        "asd",
+        "asda",
+        "sfs"
+      ],
+      "method": "asdadda",
+      "cookingTime": "34 minutes",
+      "id": "WF2yweC"
+    },
+    {
+      "title": "Bible",
+      "ingredients": [],
+      "method": "OM",
+      "cookingTime": "God minutes",
+      "id": "mpKLp6D"
+    },
+    {
+      "title": "Bible",
+      "ingredients": [],
+      "method": "asdadsasda asdad",
+      "cookingTime": "God minutes",
+      "id": "BgL5BJJ"
+    }
+  ]
+}
