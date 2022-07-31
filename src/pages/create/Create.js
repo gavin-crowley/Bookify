@@ -1,53 +1,57 @@
-import { useState, useRef, useEffect } from 'react'
-import { useFetch } from '../../hooks/useFetch'
-import { useHistory } from 'react-router-dom'
+import { useState, useRef, useEffect } from 'react';
+import { useHistory } from 'react-router-dom';
+import { projectFirestore } from '../../firebase/config';
 
 // styles
-import './Create.css'
+import './Create.css';
 
-export default function Create() {  
-  const [title, setTitle] = useState('')
-  const [method, setMethod] = useState('')
-  const [cookingTime, setCookingTime] = useState('')
-  const [newIngredient, setNewIngredient] = useState('')
-  const [ingredients, setIngredients] = useState([])
-  const ingredientInput = useRef(null)
+export default function Create() {
+  const [title, setTitle] = useState('');
+  const [method, setMethod] = useState('');
+  const [cookingTime, setCookingTime] = useState('');
+  const [newIngredient, setNewIngredient] = useState('');
+  const [ingredients, setIngredients] = useState([]);
+  const ingredientInput = useRef(null);
 
-  const { postData, data } = useFetch('http://localhost:3000/recipes', 'POST')
-  const history = useHistory()
-  
-  const handleSubmit = (e) => {
-    e.preventDefault()
-    postData({ title, ingredients, method, cookingTime: cookingTime + ' minutes' })
-  }
+  const history = useHistory();
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    const doc = {
+      title,
+      ingredients,
+      method,
+      cookingTime: cookingTime,
+    };
+
+    try {
+      await projectFirestore.collection('recipes').add(doc);
+      history.push('/');
+    } catch (err) {
+      console.log(err);
+    }
+  };
 
   const handleAdd = (e) => {
-    e.preventDefault()
-    const ing = newIngredient.trim()
+    e.preventDefault();
+    const ing = newIngredient.trim();
 
     if (ing && !ingredients.includes(ing)) {
-      setIngredients(prevIngredients => [...prevIngredients, newIngredient])
+      setIngredients((prevIngredients) => [...prevIngredients, newIngredient]);
     }
-    setNewIngredient('')
-    ingredientInput.current.focus()
-  }
+    setNewIngredient('');
+    ingredientInput.current.focus();
+  };
 
-  // redirect the user when we get data response
-  useEffect(() => {
-    if (data) {
-      history.push('/')
-    }
-  }, [data, history])
 
   return (
-    <div className="create">
-      <h2 className="page-title">Add a New Book</h2>
+    <div className='create'>
+      <h2 className='page-title'>Add a New Book</h2>
       <form onSubmit={handleSubmit}>
-
         <label>
           <span>Title:</span>
-          <input 
-            type="text" 
+          <input
+            type='text'
             onChange={(e) => setTitle(e.target.value)}
             value={title}
             required
@@ -70,26 +74,25 @@ export default function Create() {
 
         <label>
           <span>Author:</span>
-          <input 
-            // type="string" 
+          <input
+            // type="string"
             onChange={(e) => setCookingTime(e.target.value)}
             value={cookingTime}
-            required 
+            required
           />
         </label>
 
         <label>
           <span>Description:</span>
-          <textarea 
+          <textarea
             onChange={(e) => setMethod(e.target.value)}
             value={method}
             required
           />
         </label>
 
-
-        <button className="btn">submit</button>
+        <button className='btn'>submit</button>
       </form>
     </div>
-  )
+  );
 }
